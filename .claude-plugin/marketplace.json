@@ -1,0 +1,11 @@
+{
+  "name": "loom-sensorium",
+  "owner": { "name": "three" },
+  "plugins": [
+    {
+      "name": "loom-sensorium",
+      "source": "./",
+      "description": "The loom weaves time and world into your agent's view: clock, sun and moon, sky, tide, a passing creature, the machine."
+    }
+  ]
+}

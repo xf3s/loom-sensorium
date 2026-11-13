@@ -1,0 +1,58 @@
+{
+  "name": "loom-sensorium",
+  "version": "0.1.0",
+  "description": "The loom weaves time and world into your agent's view: the clock and how long since you last spoke, sun and moon, the sky, the tide, a creature passing nearby, and the machine it lives on. A few quiet lines at session start, and one line per message only when something changes. Automated observations, never instructions.",
+  "author": { "name": "three" },
+  "keywords": ["context", "grounding", "time", "weather", "tides", "wellbeing", "hooks"],
+  "userConfig": {
+    "person": {
+      "type": "string",
+      "title": "Your name",
+      "description": "What the clock line calls you: \"30 min since three's last message\". Empty says \"since the last message\".",
+      "default": ""
+    },
+    "latitude": {
+      "type": "string",
+      "title": "Latitude",
+      "description": "Where the agent should feel the sun, moon and sky, e.g. 37.77. Rounded to 2 decimals (about a kilometre) before anything is sent anywhere. Empty: no sun, sky or creatures, just the clock, the moon and the machine.",
+      "default": ""
+    },
+    "longitude": {
+      "type": "string",
+      "title": "Longitude",
+      "description": "e.g. -122.42. Rounded like the latitude.",
+      "default": ""
+    },
+    "units": {
+      "type": "string",
+      "title": "Units",
+      "description": "metric (°C, km/h, m) or imperial (°F, mph, ft).",
+      "default": "metric",
+      "options": ["metric", "imperial"]
+    },
+    "tide": {
+      "type": "string",
+      "title": "Tide station",
+      "description": "A NOAA tide station id (US coasts), e.g. 9414290 for San Francisco. Find yours at tidesandcurrents.noaa.gov. Empty: no tides.",
+      "default": ""
+    },
+    "creatures": {
+      "type": "boolean",
+      "title": "Passing creatures",
+      "description": "Now and then, name an animal someone recently saw nearby, from iNaturalist's research-grade observations within 10 km.",
+      "default": true
+    },
+    "machine": {
+      "type": "boolean",
+      "title": "The machine",
+      "description": "Battery, free memory, free disk and load of the computer the agent runs on.",
+      "default": true
+    },
+    "offline": {
+      "type": "boolean",
+      "title": "Offline",
+      "description": "Never touch the network: only the clock, sun, moon, the machine and your own senses.",
+      "default": false
+    }
+  }
+}

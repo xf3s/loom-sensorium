@@ -1,0 +1,19 @@
+{
+  "description": "loom-sensorium: the world around the session at start, and one quiet line per message",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/sensorium.py\" session", "timeout": 15 }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/sensorium.py\" prompt", "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}

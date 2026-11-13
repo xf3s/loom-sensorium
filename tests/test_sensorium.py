@@ -121,10 +121,10 @@ class TestSenses(Base):
 
     def test_own_senses(self):
         d = os.path.join(self.tmp, "senses.d"); os.makedirs(d)
-        p = os.path.join(d, "music.sh"); open(p, "w").write("#!/bin/sh\necho 'Ode to a Peppercorn, by Gezebelle Gaburgably'\n"); os.chmod(p, 0o755)
+        p = os.path.join(d, "music.sh"); open(p, "w").write("#!/bin/sh\necho 'Rain on the Kiln, by Nobody in Particular'\n"); os.chmod(p, 0o755)
         with mock.patch.object(S, "get", fake_get()):
             out = self.run_hook("session")
-        self.assertIn("· music: Ode to a Peppercorn", out)
+        self.assertIn("· music: Rain on the Kiln", out)
 
 class TestFallback(Base):
     def test_met_norway_when_open_meteo_is_down(self):
